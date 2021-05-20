@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Author: Shadi badria
+
+# Description 
+# backup script 
+
+#usage
+# ./backup_script dir_you_want_to_archive
+
+tar -cf my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $1 2>/dev/null
+exit 0
