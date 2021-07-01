@@ -8,5 +8,8 @@
 #usage
 # ./backup_script dir_you_want_to_archive
 
+echo "Hello ${HOSTNAME}"
+echo "i will backup  directory at $1"
 tar -cf my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $1 2>/dev/null
+echo "Backup completed its saved at $1"
 exit 0
