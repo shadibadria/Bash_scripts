@@ -6,7 +6,7 @@
 # backup script 
 
 #usage
-# ./backup_script dir_you_want_to_archive
+# ./backup_script `dir_you_want_to_archive`
 
 echo "Hello ${HOSTNAME}"
 echo "i will backup  directory at $1"
