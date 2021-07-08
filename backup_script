@@ -8,8 +8,24 @@
 #usage
 # ./backup_script `dir_you_want_to_archive`
 
-echo "Hello ${HOSTNAME}"
-echo "i will backup  directory at $1"
-tar -cf my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $1 2>/dev/null
-echo "Backup completed its saved at $1"
-exit 0
+# Colors
+RED='\033[0;31m'
+PLAIN='\033[0m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+
+echo -e "Hello ${GREEN}${HOSTNAME} ${PLAIN}"
+echo
+read -p "Enter Path of the Dir you want to archive: " dir
+echo
+
+[ ! -d $dir ] && echo  -e "${RED}Error:${PLAIN} directory not found" && exit 1
+
+echo -e "${YELLOW}backing up directory $dir ${PLAIN}"
+tar -cf my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $dir 2>/dev/null
+echo
+echo -e "${GREEN}DONE ...Backup completed its saved at $dir${PLAIN}"
+
+
+
+
