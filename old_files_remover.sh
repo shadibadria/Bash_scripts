@@ -10,7 +10,6 @@ read -p "please enter the Dir  you want to delete old files in  it : " dir
 read -p "How many days old ? " days
 
 readarray -t files < <(find $dir -maxdepth 1 -type f -mtime "+$days")
-echo $files[0]
 for file in "${files[@]}"; do
     rm -i "$file"
 done
