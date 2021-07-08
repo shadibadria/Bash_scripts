@@ -24,7 +24,7 @@ echo
 echo -e "${YELLOW}backing up directory $dir ${PLAIN}"
 tar -cf my_backup_"$(date +%d-%m-%Y_%H-%M-%S)".tar $dir 2>/dev/null
 echo
-echo -e "${GREEN}DONE ...Backup completed its saved at $dir${PLAIN}"
+echo -e "${GREEN}DONE ...Backup completed its saved at  $(pwd) ${PLAIN}"
 
 
 
