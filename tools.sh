@@ -22,6 +22,8 @@ echo "select what you would like to do : "
 echo "############################################"
 echo  "# 1)backup"
 echo  "# 2)Exit"
+echo  "# 3)create user"
+
 echo "############################################"
 read -p "Plase Choose Option : " option
 echo 
@@ -31,6 +33,10 @@ case $option in
     ;;
     2) 
         echo -e "${GREEN}Exsiting ..${PLAIN}";echo; exit 1 
+    ;;
+    3) 
+               sh ./create_user.sh
+
     ;;
     *) 
         echo -e "${RED}ERROR: ${PLAIN}Invalid option provided";
