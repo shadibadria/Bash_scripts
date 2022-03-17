@@ -18,13 +18,13 @@ fi
 clear
 while [ 2 -eq 2 ] ; do
 echo
-echo "select what you would like to do : "
+echo -e  "${PLAIN}select what you would like to do : "
 echo "############################################"
 echo  "# 0)Exit"
 echo  "# 1)Backup"
 echo  "# 2)Create User"
 echo  "# 3)System Information"
-
+echo  "# 4)System Setups Check"
 echo "############################################"
 read -p "Plase Choose Option : " option
 echo 
@@ -42,6 +42,9 @@ case $option in
     ;;
     3) 
               clear; sh ./system_info.sh;
+    ;;
+    4) 
+              clear; python3 monitor_health.py;
     ;;
     *) 
         echo -e "${RED}ERROR: ${PLAIN}Invalid option provided";
